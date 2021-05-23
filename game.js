@@ -22,7 +22,7 @@ class Game{
     start(){
         if(gamestate===0){
             player= new Player();
-            //player.getCount();
+            player.getCount();
             
             form=new Form();
             form.display();

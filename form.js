@@ -29,7 +29,7 @@ class Form{
             var name= input.value();
 
             playerCount+=1;
-            //player.update(name);
+            player.update(name);
             player.updateCount(playerCount);
 
             greeting.html("Hello "+ name);
