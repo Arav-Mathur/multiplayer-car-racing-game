@@ -33,7 +33,7 @@ class Form{
            // player.updateCount(playerCount);
 
             greeting.html("Hello "+ name);
-            greeting.position(250,250)
+            greeting.position(500,500)
 
         })
     }

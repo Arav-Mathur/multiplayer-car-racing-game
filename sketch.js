@@ -5,7 +5,7 @@ var playerCount = 0;
 var form,game,player;
 
 function setup(){
-    createCanvas(1500,700);
+    createCanvas(500,500);
     database= firebase.database();
 
     game= new Game();
