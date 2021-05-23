@@ -1,6 +1,8 @@
 class Form{
     constructor() {
-        
+        this.input= createInput('Anonymous');
+        this.button= createButton('Play');
+        this.greeting= createElement('h2');
     }
 
     display(){
@@ -8,13 +10,8 @@ class Form{
         title.html("Car Racing Game");
         title.position(windowWidth/2,0);
 
-        var input= createInput('Anonymous');
-        input.position(470,160);
-        
-        var button= createButton('Play');
-        button.position(470,200);
-
-        var greeting= createElement('h2');
+        this.input.position(470,160);
+        this.button.position(470,200)
 
         //button.mousePressed()- used to trigger an action when a mouse button is pressed
         //It expects  a function as an argument
@@ -22,18 +19,19 @@ class Form{
         //2. Update the database with the name of the player
         // 3. Update the playercount in the game and in the database
 
-        button.mousePressed(function(){
-            input.hide();
-            button.hide();
+        this.button.mousePressed(()=>{
+            this.input.hide();
+            this.button.hide();
 
-            var name= input.value();
+            player.name= this.input.value();
 
             playerCount+=1;
-            player.update(name);
+            player.index=playerCount;
+            player.update();
             player.updateCount(playerCount);
 
-            greeting.html("Hello "+ name);
-            greeting.position(500,500)
+            this.greeting.html("Hello "+ player.name);
+            this.greeting.position(500,500)
 
         })
     }
