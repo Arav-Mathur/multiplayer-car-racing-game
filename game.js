@@ -1,4 +1,7 @@
 class Game{
+    // gamestate = 0: wait
+    //gamestate = 1: play
+    //gamestate = 2: end 
     constructor() {
         
     }
@@ -23,10 +26,17 @@ class Game{
         if(gamestate===0){
             player= new Player();
             player.getCount();
-            
+                
             form=new Form();
             form.display();
         }
+
+        car1= createSprite(100,200);
+        car2= createSprite(300,200);
+        car3= createSprite(500,200);
+        car4= createSprite(700,200);
+        cars=[car1,car2,car3,car4];
+
     }
 
     play(){
@@ -36,16 +46,42 @@ class Game{
         Player.get_PlayerInfo();
 
         if(allPlayers !== undefined){
-            var display_position=130;
+           // var display_position=130;
+             var carIndex =0;
+                var x=0;
+                var y;
 
-            //player1,player2,player3,player4
-
+            // for each loop. goes through each value in an array
+            //1st iteration- plr--> player1
+            //2nd "" - plr--> player2 .... (4 iterations)
+            //allPlayers[plr] = player1 or player2 depending on number of iteration
             for(var plr in allPlayers){
-                textSize(15);
-                text(allPlayers[plr].name+": "+allPlayers[plr].distance,160,display_position)
-                display_position+=20;
+
+                carIndex=carIndex+1;
+                x= x+200;
+                y= displayHeight-allPlayers[plr].distance;
+                if(carIndex === player.index){
+                    //fill("red")
+                    cars[carIndex-1].shapeColor="red"
+                    camera.position.x= displayWidth/2
+                    camera.position.y= cars[carIndex-1].y
+
+                }
+                else{
+                   // fill("black")
+                }
+                cars[carIndex-1].x = x;
+                cars[carIndex-1].y=y;
+                //  textSize(15);
+                // text(allPlayers[plr].name+": "+allPlayers[plr].distance,160,display_position)
+                //display_position+=20;
+            }
+            if(keyIsDown(UP_ARROW) && player.index !=null){
+                    player.distance+=5;
+                    player.update();
             }
         }
+        drawSprites();
     }
 
 }
