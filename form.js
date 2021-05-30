@@ -35,4 +35,10 @@ class Form{
 
         })
     }
+
+    hide(){
+        this.input.hide();
+        this.button.hide();
+        this.greeting.hide();
+    }
 }

@@ -29,4 +29,15 @@ class Game{
         }
     }
 
+    play(){
+        form.hide();
+        textSize(30);
+        text("Game Start",160,100);
+        Player.get_PlayerInfo();
+
+        if(allPlayers !== undefined){
+            
+        }
+    }
+
 }
