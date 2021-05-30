@@ -36,7 +36,15 @@ class Game{
         Player.get_PlayerInfo();
 
         if(allPlayers !== undefined){
-            
+            var display_position=130;
+
+            //player1,player2,player3,player4
+
+            for(var plr in allPlayers){
+                textSize(15);
+                text(allPlayers[plr].name+": "+allPlayers[plr].distance,160,display_position)
+                display_position+=20;
+            }
         }
     }
 
