@@ -52,7 +52,7 @@ class Game{
                 var y;
 
             // for each loop. goes through each value in an array
-            //1st iteration- plr--> player1
+            //1st iteration- plr --> player1
             //2nd "" - plr--> player2 .... (4 iterations)
             //allPlayers[plr] = player1 or player2 depending on number of iteration
             for(var plr in allPlayers){
