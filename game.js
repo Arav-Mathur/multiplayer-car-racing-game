@@ -52,11 +52,11 @@ class Game{
         textSize(30);
         text("Game Start",160,100);
         Player.get_PlayerInfo();
-        image(track_img,0,-displayHeight*4,displayWidth,displayHeight*5)
         if(allPlayers !== undefined){
            // var display_position=130;
+           
              var carIndex =0;
-                var x=0;
+                var x=200;
                 var y;
 
             // for each loop. goes through each value in an array
@@ -66,10 +66,11 @@ class Game{
             for(var plr in allPlayers){
 
                 carIndex=carIndex+1;
-                x= x+200;
+                x= x+250;
                 y= displayHeight-allPlayers[plr].distance;
                 if(carIndex === player.index){
                     //fill("red")
+                    image(track_img,0,-displayHeight*4,displayWidth,displayHeight*5)
                     cars[carIndex-1].shapeColor="red"
                     camera.position.x= displayWidth/2
                     camera.position.y= cars[carIndex-1].y
