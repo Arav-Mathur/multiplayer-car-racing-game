@@ -49,7 +49,7 @@ class Game{
 
     play(){
         form.hide();
-        
+        clear();
         Player.get_PlayerInfo();
         if(allPlayers !== undefined){
            // var display_position=130;
@@ -90,6 +90,13 @@ class Game{
             }
         }
         drawSprites();
+    }
+    
+    destroy(){
+        car1.visible = false;
+        car2.visible = false;
+        car3.visible = false;
+        car4.visible = false;
     }
 
 }

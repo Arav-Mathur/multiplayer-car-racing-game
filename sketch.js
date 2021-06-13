@@ -17,13 +17,13 @@ track_img = loadImage("images/track.jpg");
 }
 
 function setup(){
-    createCanvas(displayWidth,displayHeight);
+    createCanvas(displayWidth,displayHeight-100);
     database= firebase.database();
 
     game= new Game();
     game.getState();
     game.start();
-   
+
 
 }
 

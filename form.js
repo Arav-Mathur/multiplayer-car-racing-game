@@ -13,14 +13,13 @@ class Form{
 
         if (gamestate === 0){
         this.input.position(470,160);
-        this.button.position(470,200)
+        this.button.position(470,200);
         }
         this.reset.position(50,50)
         this.reset.mousePressed(()=>{
             player.updateCount(0);
             game.update(0);
-            form.reload();
-           // this.reset.hide()
+            // this.reset.hide()
         })
         //button.mousePressed()- used to trigger an action when a mouse button is pressed
         //It expects  a function as an argument
