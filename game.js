@@ -51,11 +51,12 @@ class Game{
         form.hide();
         clear();
         Player.get_PlayerInfo();
+        player.get_carsEnded();
         if(allPlayers !== undefined){
            // var display_position=130;
            
              var carIndex =0;
-                var x=200;
+                var x=180;
                 var y;
 
             // for each loop. goes through each value in an array
@@ -65,7 +66,7 @@ class Game{
             for(var plr in allPlayers){
 
                 carIndex=carIndex+1;
-                x= x+250;
+                x= x+240;
                 y= displayHeight-allPlayers[plr].distance;
                 if(carIndex === player.index){
                     //fill("red")
@@ -73,6 +74,10 @@ class Game{
                     cars[carIndex-1].shapeColor="red"
                     camera.position.x= displayWidth/2
                     camera.position.y= cars[carIndex-1].y
+                   /* fill("red")
+                    textStyle(BOLD)
+                    text(player.rank,x-10,y+60);
+                    */
 
                 }
                 else{
@@ -85,8 +90,15 @@ class Game{
                 //display_position+=20;
             }
             if(keyIsDown(UP_ARROW) && player.index !=null){
-                    player.distance+=5;
+                    player.distance+=20;
                     player.update();
+            }
+            if(player.distance > 4220){
+                gamestate = 2;
+                player.rank+=1;
+                player.update();
+                Player.update_carsEnded(player.rank);
+                
             }
         }
         drawSprites();
@@ -98,5 +110,10 @@ class Game{
         car3.visible = false;
         car4.visible = false;
     }
-
+    end(){
+        console.log(camera.position.x,camera.position.y);
+        text("game has ended",camera.position.x,camera.position.y);
+        console.log(player.rank);
+        //player.get_PlayerInfo();
+    }
 }

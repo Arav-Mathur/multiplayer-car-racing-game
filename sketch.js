@@ -38,7 +38,9 @@ function draw(){
         clear();
         game.play();
     }
-   
+   if(gamestate===2){
+        game.end();
+   }
 }
 
 

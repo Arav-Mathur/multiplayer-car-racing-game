@@ -19,6 +19,7 @@ class Form{
         this.reset.mousePressed(()=>{
             player.updateCount(0);
             game.update(0);
+            Player.update_carsEnded(0)
             // this.reset.hide()
         })
         //button.mousePressed()- used to trigger an action when a mouse button is pressed
@@ -38,7 +39,7 @@ class Form{
             player.updateCount(playerCount);
 
             this.greeting.html("Hello "+ player.name);
-            this.greeting.position(500,500)
+            this.greeting.position(500,500) 
 
         })
     }
